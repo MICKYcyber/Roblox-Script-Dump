@@ -1,9 +1,5 @@
--- AnimatorToggle.lua
--- Usage: set Key = "F" before calling loadstring
-
--- Key must be defined before loadstring executes
-local key = Key or "F"  -- defaults to F if Key not set
-
+-- LocalScript from GitHub
+local key = Key  -- relies on external Key variable
 local player = game.Players.LocalPlayer
 local UserInputService = game:GetService("UserInputService")
 
@@ -15,14 +11,12 @@ local function toggleAnimator()
     if not humanoid then return end
 
     if not animatorDeleted then
-        -- Delete Animator
         local animator = humanoid:FindFirstChildOfClass("Animator")
         if animator then
             animator:Destroy()
             animatorDeleted = true
         end
     else
-        -- Restore Animator
         if not humanoid:FindFirstChildOfClass("Animator") then
             local newAnimator = Instance.new("Animator")
             newAnimator.Parent = humanoid
@@ -31,10 +25,9 @@ local function toggleAnimator()
     end
 end
 
--- Listen for the key press
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if gameProcessed then return end
-    if input.KeyCode == Enum.KeyCode[key:upper()] then
+    if input.KeyCode == Enum.KeyCode[key] then
         toggleAnimator()
     end
 end)
