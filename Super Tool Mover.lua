@@ -1,13 +1,12 @@
---[=[
- d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
-88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
-88      88    88    88            odD'      88      88    88 88ooo88 
-88  ooo 88    88    88          .88'        88      88    88 88~~~88 
-88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
- Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
-]=]
+--[=[d888888b d8888b.  .d8b.  .d8888. db   db  d888b   .d8b.  .88b  d88. d88888b d8888b. .d8888. 
+`~~88~~' 88  `8D d8' `8b 88'  YP 88   88 88' Y8b d8' `8b 88'YbdP`88 88'     88  `8D 88'  YP 
+   88    88oobY' 88ooo88 `8bo.   88ooo88 88      88ooo88 88  88  88 88ooooo 88oobY' `8bo.   
+   88    88`8b   88~~~88   `Y8b. 88~~~88 88  ooo 88~~~88 88  88  88 88~~~~~ 88`8b     `Y8b. 
+   88    88 `88. 88   88 db   8D 88   88 88. ~8~ 88   88 88  88  88 88.     88 `88. db   8D 
+   YP    88   YD YP   YP `8888Y' YP   YP  Y888P  YP   YP YP  YP  YP Y88888P 88   YD `8888Y' 
+--]=]
 
--- Instances: 61 | Scripts: 6 | Modules: 0 | Tags: 0
+-- Instances: 58 | Scripts: 5 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.GetGoodGUI
@@ -42,7 +41,7 @@ G2L["3"] = Instance.new("LocalScript", G2L["2"]);
 G2L["3"]["Name"] = [[LocalScript1]];
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 1 Button
+-- StarterGui.GetGoodGUI.Drag.Switch Tab
 G2L["4"] = Instance.new("TextButton", G2L["2"]);
 G2L["4"]["TextWrapped"] = true;
 G2L["4"]["BorderSizePixel"] = 0;
@@ -51,19 +50,19 @@ G2L["4"]["TextScaled"] = true;
 G2L["4"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["4"]["Size"] = UDim2.new(0, 50, 0, 50);
+G2L["4"]["Size"] = UDim2.new(0, 30, 0, 30);
 G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["4"]["Text"] = [[Move Tool]];
-G2L["4"]["Name"] = [[Tab 1 Button]];
-G2L["4"]["Position"] = UDim2.new(-0.45752, 0, 0, 0);
+G2L["4"]["Text"] = [[Switch Tabs]];
+G2L["4"]["Name"] = [[Switch Tab]];
+G2L["4"]["Position"] = UDim2.new(-0.26798, 0, 2, 0);
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 1 Button.LocalScript
+-- StarterGui.GetGoodGUI.Drag.Switch Tab.LocalScript
 G2L["5"] = Instance.new("LocalScript", G2L["4"]);
 
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 1 Button.UICorner
+-- StarterGui.GetGoodGUI.Drag.Switch Tab.UICorner
 G2L["6"] = Instance.new("UICorner", G2L["4"]);
 
 
@@ -308,81 +307,82 @@ G2L["22"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 G2L["22"]["Thickness"] = 3;
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2 Button
-G2L["23"] = Instance.new("TextButton", G2L["2"]);
-G2L["23"]["TextWrapped"] = true;
+-- StarterGui.GetGoodGUI.Drag.Tab 2
+G2L["23"] = Instance.new("Frame", G2L["2"]);
+G2L["23"]["Visible"] = false;
+G2L["23"]["ZIndex"] = -4;
 G2L["23"]["BorderSizePixel"] = 0;
-G2L["23"]["TextSize"] = 14;
-G2L["23"]["TextScaled"] = true;
-G2L["23"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["23"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["23"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["23"]["Size"] = UDim2.new(0, 50, 0, 50);
+G2L["23"]["Size"] = UDim2.new(0, 153, 0, 273);
+G2L["23"]["Position"] = UDim2.new(-0.001, 0, 0.78, 0);
 G2L["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["23"]["Text"] = [[Rotate Tool]];
-G2L["23"]["Name"] = [[Tab 2 Button]];
-G2L["23"]["Position"] = UDim2.new(-0.45752, 0, 3.2381, 0);
+G2L["23"]["Name"] = [[Tab 2]];
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2 Button.LocalScript
+-- StarterGui.GetGoodGUI.Drag.Tab 2.LocalScript
 G2L["24"] = Instance.new("LocalScript", G2L["23"]);
 
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2 Button.UICorner
-G2L["25"] = Instance.new("UICorner", G2L["23"]);
-
-
-
--- StarterGui.GetGoodGUI.Drag.Tab 2
-G2L["26"] = Instance.new("Frame", G2L["2"]);
-G2L["26"]["Visible"] = false;
-G2L["26"]["ZIndex"] = -4;
-G2L["26"]["BorderSizePixel"] = 0;
-G2L["26"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["26"]["Size"] = UDim2.new(0, 153, 0, 273);
-G2L["26"]["Position"] = UDim2.new(-0.001, 0, 0.78, 0);
-G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["26"]["Name"] = [[Tab 2]];
-
-
--- StarterGui.GetGoodGUI.Drag.Tab 2.LocalScript
-G2L["27"] = Instance.new("LocalScript", G2L["26"]);
-
-
-
 -- StarterGui.GetGoodGUI.Drag.Tab 2.Amount
-G2L["28"] = Instance.new("TextBox", G2L["26"]);
-G2L["28"]["Name"] = [[Amount]];
-G2L["28"]["BorderSizePixel"] = 0;
-G2L["28"]["TextSize"] = 14;
-G2L["28"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["28"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["28"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["28"]["Size"] = UDim2.new(0, 130, 0, 30);
-G2L["28"]["Position"] = UDim2.new(0.07241, 0, 0.83902, 0);
-G2L["28"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["28"]["Text"] = [[]];
+G2L["25"] = Instance.new("TextBox", G2L["23"]);
+G2L["25"]["Name"] = [[Amount]];
+G2L["25"]["BorderSizePixel"] = 0;
+G2L["25"]["TextSize"] = 14;
+G2L["25"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["25"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["25"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["25"]["Size"] = UDim2.new(0, 130, 0, 30);
+G2L["25"]["Position"] = UDim2.new(0.07241, 0, 0.83902, 0);
+G2L["25"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["25"]["Text"] = [[]];
 
 
 -- StarterGui.GetGoodGUI.Drag.Tab 2.Amount.UICorner
-G2L["29"] = Instance.new("UICorner", G2L["28"]);
+G2L["26"] = Instance.new("UICorner", G2L["25"]);
 
 
 
 -- StarterGui.GetGoodGUI.Drag.Tab 2.Amount.UIStroke
-G2L["2a"] = Instance.new("UIStroke", G2L["28"]);
-G2L["2a"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-G2L["2a"]["Thickness"] = 3;
+G2L["27"] = Instance.new("UIStroke", G2L["25"]);
+G2L["27"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["27"]["Thickness"] = 3;
 
 
 -- StarterGui.GetGoodGUI.Drag.Tab 2.UICorner
-G2L["2b"] = Instance.new("UICorner", G2L["26"]);
+G2L["28"] = Instance.new("UICorner", G2L["23"]);
 
 
 
 -- StarterGui.GetGoodGUI.Drag.Tab 2.PitchDown
-G2L["2c"] = Instance.new("TextButton", G2L["26"]);
+G2L["29"] = Instance.new("TextButton", G2L["23"]);
+G2L["29"]["TextWrapped"] = true;
+G2L["29"]["BorderSizePixel"] = 0;
+G2L["29"]["TextSize"] = 14;
+G2L["29"]["TextScaled"] = true;
+G2L["29"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["29"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["29"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["29"]["Size"] = UDim2.new(0, 30, 0, 30);
+G2L["29"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["29"]["Text"] = [[Pitch Down]];
+G2L["29"]["Name"] = [[PitchDown]];
+G2L["29"]["Position"] = UDim2.new(0.40149, 0, 0.26449, 0);
+
+
+-- StarterGui.GetGoodGUI.Drag.Tab 2.PitchDown.UICorner
+G2L["2a"] = Instance.new("UICorner", G2L["29"]);
+
+
+
+-- StarterGui.GetGoodGUI.Drag.Tab 2.PitchDown.UIStroke
+G2L["2b"] = Instance.new("UIStroke", G2L["29"]);
+G2L["2b"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["2b"]["Thickness"] = 3;
+
+
+-- StarterGui.GetGoodGUI.Drag.Tab 2.YawLeft
+G2L["2c"] = Instance.new("TextButton", G2L["23"]);
 G2L["2c"]["TextWrapped"] = true;
 G2L["2c"]["BorderSizePixel"] = 0;
 G2L["2c"]["TextSize"] = 14;
@@ -392,24 +392,24 @@ G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["2c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["2c"]["Size"] = UDim2.new(0, 30, 0, 30);
 G2L["2c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2c"]["Text"] = [[Pitch Down]];
-G2L["2c"]["Name"] = [[PitchDown]];
-G2L["2c"]["Position"] = UDim2.new(0.40149, 0, 0.26449, 0);
+G2L["2c"]["Text"] = [[Rotate Left]];
+G2L["2c"]["Name"] = [[YawLeft]];
+G2L["2c"]["Position"] = UDim2.new(0.40149, 0, 0.44285, 0);
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.PitchDown.UICorner
+-- StarterGui.GetGoodGUI.Drag.Tab 2.YawLeft.UICorner
 G2L["2d"] = Instance.new("UICorner", G2L["2c"]);
 
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.PitchDown.UIStroke
+-- StarterGui.GetGoodGUI.Drag.Tab 2.YawLeft.UIStroke
 G2L["2e"] = Instance.new("UIStroke", G2L["2c"]);
 G2L["2e"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 G2L["2e"]["Thickness"] = 3;
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.YawLeft
-G2L["2f"] = Instance.new("TextButton", G2L["26"]);
+-- StarterGui.GetGoodGUI.Drag.Tab 2.YawRight
+G2L["2f"] = Instance.new("TextButton", G2L["23"]);
 G2L["2f"]["TextWrapped"] = true;
 G2L["2f"]["BorderSizePixel"] = 0;
 G2L["2f"]["TextSize"] = 14;
@@ -419,24 +419,24 @@ G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["2f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["2f"]["Size"] = UDim2.new(0, 30, 0, 30);
 G2L["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["2f"]["Text"] = [[Rotate Left]];
-G2L["2f"]["Name"] = [[YawLeft]];
-G2L["2f"]["Position"] = UDim2.new(0.40149, 0, 0.44285, 0);
+G2L["2f"]["Text"] = [[Rotate Right]];
+G2L["2f"]["Name"] = [[YawRight]];
+G2L["2f"]["Position"] = UDim2.new(0.40149, 0, 0.63461, 0);
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.YawLeft.UICorner
+-- StarterGui.GetGoodGUI.Drag.Tab 2.YawRight.UICorner
 G2L["30"] = Instance.new("UICorner", G2L["2f"]);
 
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.YawLeft.UIStroke
+-- StarterGui.GetGoodGUI.Drag.Tab 2.YawRight.UIStroke
 G2L["31"] = Instance.new("UIStroke", G2L["2f"]);
 G2L["31"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 G2L["31"]["Thickness"] = 3;
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.YawRight
-G2L["32"] = Instance.new("TextButton", G2L["26"]);
+-- StarterGui.GetGoodGUI.Drag.Tab 2.PitchUp
+G2L["32"] = Instance.new("TextButton", G2L["23"]);
 G2L["32"]["TextWrapped"] = true;
 G2L["32"]["BorderSizePixel"] = 0;
 G2L["32"]["TextSize"] = 14;
@@ -446,24 +446,24 @@ G2L["32"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["32"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["32"]["Size"] = UDim2.new(0, 30, 0, 30);
 G2L["32"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["32"]["Text"] = [[Rotate Right]];
-G2L["32"]["Name"] = [[YawRight]];
-G2L["32"]["Position"] = UDim2.new(0.40149, 0, 0.63461, 0);
+G2L["32"]["Text"] = [[Pitch Up]];
+G2L["32"]["Name"] = [[PitchUp]];
+G2L["32"]["Position"] = UDim2.new(0.39496, 0, 0.09584, 0);
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.YawRight.UICorner
+-- StarterGui.GetGoodGUI.Drag.Tab 2.PitchUp.UICorner
 G2L["33"] = Instance.new("UICorner", G2L["32"]);
 
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.YawRight.UIStroke
+-- StarterGui.GetGoodGUI.Drag.Tab 2.PitchUp.UIStroke
 G2L["34"] = Instance.new("UIStroke", G2L["32"]);
 G2L["34"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 G2L["34"]["Thickness"] = 3;
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.PitchUp
-G2L["35"] = Instance.new("TextButton", G2L["26"]);
+-- StarterGui.GetGoodGUI.Drag.Tab 2.RollBackward
+G2L["35"] = Instance.new("TextButton", G2L["23"]);
 G2L["35"]["TextWrapped"] = true;
 G2L["35"]["BorderSizePixel"] = 0;
 G2L["35"]["TextSize"] = 14;
@@ -473,24 +473,24 @@ G2L["35"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["35"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["35"]["Size"] = UDim2.new(0, 30, 0, 30);
 G2L["35"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["35"]["Text"] = [[Pitch Up]];
-G2L["35"]["Name"] = [[PitchUp]];
-G2L["35"]["Position"] = UDim2.new(0.39496, 0, 0.09584, 0);
+G2L["35"]["Text"] = [[Pitch Back]];
+G2L["35"]["Name"] = [[RollBackward]];
+G2L["35"]["Position"] = UDim2.new(0.72176, 0, 0.44285, 0);
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.PitchUp.UICorner
+-- StarterGui.GetGoodGUI.Drag.Tab 2.RollBackward.UICorner
 G2L["36"] = Instance.new("UICorner", G2L["35"]);
 
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.PitchUp.UIStroke
+-- StarterGui.GetGoodGUI.Drag.Tab 2.RollBackward.UIStroke
 G2L["37"] = Instance.new("UIStroke", G2L["35"]);
 G2L["37"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 G2L["37"]["Thickness"] = 3;
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.RollBackward
-G2L["38"] = Instance.new("TextButton", G2L["26"]);
+-- StarterGui.GetGoodGUI.Drag.Tab 2.RollForward
+G2L["38"] = Instance.new("TextButton", G2L["23"]);
 G2L["38"]["TextWrapped"] = true;
 G2L["38"]["BorderSizePixel"] = 0;
 G2L["38"]["TextSize"] = 14;
@@ -500,68 +500,41 @@ G2L["38"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["38"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["38"]["Size"] = UDim2.new(0, 30, 0, 30);
 G2L["38"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["38"]["Text"] = [[Pitch Back]];
-G2L["38"]["Name"] = [[RollBackward]];
-G2L["38"]["Position"] = UDim2.new(0.72176, 0, 0.44285, 0);
+G2L["38"]["Text"] = [[Pitch Forward]];
+G2L["38"]["Name"] = [[RollForward]];
+G2L["38"]["Position"] = UDim2.new(0.06816, 0, 0.44285, 0);
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.RollBackward.UICorner
+-- StarterGui.GetGoodGUI.Drag.Tab 2.RollForward.UICorner
 G2L["39"] = Instance.new("UICorner", G2L["38"]);
 
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.RollBackward.UIStroke
+-- StarterGui.GetGoodGUI.Drag.Tab 2.RollForward.UIStroke
 G2L["3a"] = Instance.new("UIStroke", G2L["38"]);
 G2L["3a"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 G2L["3a"]["Thickness"] = 3;
 
 
--- StarterGui.GetGoodGUI.Drag.Tab 2.RollForward
-G2L["3b"] = Instance.new("TextButton", G2L["26"]);
-G2L["3b"]["TextWrapped"] = true;
-G2L["3b"]["BorderSizePixel"] = 0;
-G2L["3b"]["TextSize"] = 14;
-G2L["3b"]["TextScaled"] = true;
-G2L["3b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["3b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["3b"]["Size"] = UDim2.new(0, 30, 0, 30);
-G2L["3b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["3b"]["Text"] = [[Pitch Forward]];
-G2L["3b"]["Name"] = [[RollForward]];
-G2L["3b"]["Position"] = UDim2.new(0.06816, 0, 0.44285, 0);
-
-
--- StarterGui.GetGoodGUI.Drag.Tab 2.RollForward.UICorner
-G2L["3c"] = Instance.new("UICorner", G2L["3b"]);
-
-
-
--- StarterGui.GetGoodGUI.Drag.Tab 2.RollForward.UIStroke
-G2L["3d"] = Instance.new("UIStroke", G2L["3b"]);
-G2L["3d"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
-G2L["3d"]["Thickness"] = 3;
-
-
 -- StarterGui.GetGoodGUI.Drag.LocalScript1
 local function C_3()
 local script = G2L["3"];
-	local UIS = game:GetService('UserInputService')
+	local UIS = game:GetService("UserInputService")
+	local TweenService = game:GetService("TweenService")
+	
 	local frame = script.Parent
-	local dragToggle = nil
+	local dragToggle, dragStart, startPos
 	local dragSpeed = 0
-	local dragStart = nil
-	local startPos = nil
 	
 	local function updateInput(input)
 		local delta = input.Position - dragStart
 		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
 			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+		TweenService:Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
 	end
 	
 	frame.InputBegan:Connect(function(input)
-		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 			dragToggle = true
 			dragStart = input.Position
 			startPos = frame.Position
@@ -580,18 +553,26 @@ local script = G2L["3"];
 			end
 		end
 	end)
+	
 end;
 task.spawn(C_3);
--- StarterGui.GetGoodGUI.Drag.Tab 1 Button.LocalScript
+-- StarterGui.GetGoodGUI.Drag.Switch Tab.LocalScript
 local function C_5()
 local script = G2L["5"];
-	local tab1 = script.Parent.Parent["Tab 1"]
-	local tab2 = script.Parent.Parent["Tab 2"]
+	local tab1 = script.Parent.Parent:WaitForChild("Tab 1")
+	local tab2 = script.Parent.Parent:WaitForChild("Tab 2")
+	local switchbutton = script.Parent
 	
-	script.Parent.MouseButton1Down:Connect(function()
-		tab2.Visible = false
-		tab1.Visible = true	
+	switchbutton.MouseButton1Click:Connect(function()
+		if tab1.Visible then
+			tab1.Visible = false
+			tab2.Visible = true
+		else
+			tab1.Visible = true
+			tab2.Visible = false
+		end
 	end)
+	
 end;
 task.spawn(C_5);
 -- StarterGui.GetGoodGUI.Drag.Tab 1.LocalScript
@@ -611,16 +592,12 @@ local script = G2L["8"];
 	local function getTool()
 		local char = player.Character or player.CharacterAdded:Wait()
 		local tool = char:FindFirstChildOfClass("Tool")
-		if not tool then
-			warn("No tool equipped!")
-		end
 		return tool
 	end
 	
 	local function getAmount()
 		local amt = tonumber(amountBox.Text)
 		if not amt then
-			warn("Amount textbox invalid, defaulting to 1")
 			return 1
 		end
 		return amt
@@ -638,7 +615,6 @@ local script = G2L["8"];
 		local newPos = pos + deltaWorld
 	
 		tool.Grip = CFrame.new(newPos) * rot
-		print(string.format("Moved grip by %s, new grip position: %s", tostring(deltaLocal), tostring(newPos)))
 	end
 	
 	btnUp.MouseButton1Click:Connect(function()
@@ -670,39 +646,12 @@ task.spawn(C_8);
 -- StarterGui.GetGoodGUI.Drag.Tab 1.LocalScript
 local function C_9()
 local script = G2L["9"];
-	local Players = game:GetService("Players")
-	local player = Players.LocalPlayer
-	local character = player.Character or player.CharacterAdded:Wait()
-	
-	local LowerArmButton = script.Parent:WaitForChild("LowerArm")
-	
-	LowerArmButton.MouseButton1Click:Connect(function()
-		local humanoid = character:FindFirstChildOfClass("Humanoid")
-		if not humanoid then return end
-	
-		local animator = humanoid:FindFirstChildOfClass("Animator")
-		if animator then
-			animator:Destroy() -- This stops ALL animations immediately
-		end
-	end)
 	
 end;
 task.spawn(C_9);
--- StarterGui.GetGoodGUI.Drag.Tab 2 Button.LocalScript
+-- StarterGui.GetGoodGUI.Drag.Tab 2.LocalScript
 local function C_24()
 local script = G2L["24"];
-	local tab1 = script.Parent.Parent["Tab 1"]
-	local tab2 = script.Parent.Parent["Tab 2"]
-	
-	script.Parent.MouseButton1Down:Connect(function()
-		tab1.Visible = false
-		tab2.Visible = true	
-	end)
-end;
-task.spawn(C_24);
--- StarterGui.GetGoodGUI.Drag.Tab 2.LocalScript
-local function C_27()
-local script = G2L["27"];
 	-- LocalScript (in your GUI)
 	local player = game.Players.LocalPlayer
 	local gui = script.Parent
@@ -716,9 +665,18 @@ local script = G2L["27"];
 	local rollBackwardBtn = gui:WaitForChild("RollBackward")
 	local amountBox = gui:WaitForChild("Amount")
 	
+	-- Get degrees from box or default to 90
+	local function getDegrees()
+		local num = tonumber(amountBox.Text)
+		if not num or num == 0 then
+			return 90
+		end
+		return num
+	end
+	
 	-- Convert degrees to radians
 	local function deg2rad(deg)
-		return math.rad(tonumber(deg) or 0)
+		return math.rad(deg or 0)
 	end
 	
 	-- Get the tool the player is holding (returns nil if none)
@@ -736,44 +694,42 @@ local script = G2L["27"];
 	-- Rotate Grip if holding a tool
 	local function rotateGrip(axis, degrees)
 		local tool = getEquippedTool()
-		if tool then
-			local rotation = CFrame.Angles(
-				axis.X * deg2rad(degrees),
-				axis.Y * deg2rad(degrees),
-				axis.Z * deg2rad(degrees)
-			)
-			tool.Grip = tool.Grip * rotation
-		else
-			warn("No tool equipped!")
-		end
+		if not tool then return end
+	
+		local rotation = CFrame.Angles(
+			axis.X * deg2rad(degrees),
+			axis.Y * deg2rad(degrees),
+			axis.Z * deg2rad(degrees)
+		)
+		tool.Grip = tool.Grip * rotation
 	end
 	
 	-- Button connections
 	yawLeftBtn.MouseButton1Click:Connect(function()
-		rotateGrip(Vector3.new(0, 1, 0), amountBox.Text)
+		rotateGrip(Vector3.new(0, 1, 0), getDegrees())
 	end)
 	
 	yawRightBtn.MouseButton1Click:Connect(function()
-		rotateGrip(Vector3.new(0, -1, 0), amountBox.Text)
+		rotateGrip(Vector3.new(0, -1, 0), getDegrees())
 	end)
 	
 	pitchUpBtn.MouseButton1Click:Connect(function()
-		rotateGrip(Vector3.new(1, 0, 0), amountBox.Text)
+		rotateGrip(Vector3.new(1, 0, 0), getDegrees())
 	end)
 	
 	pitchDownBtn.MouseButton1Click:Connect(function()
-		rotateGrip(Vector3.new(-1, 0, 0), amountBox.Text)
+		rotateGrip(Vector3.new(-1, 0, 0), getDegrees())
 	end)
 	
 	rollForwardBtn.MouseButton1Click:Connect(function()
-		rotateGrip(Vector3.new(0, 0, 1), amountBox.Text)
+		rotateGrip(Vector3.new(0, 0, 1), getDegrees())
 	end)
 	
 	rollBackwardBtn.MouseButton1Click:Connect(function()
-		rotateGrip(Vector3.new(0, 0, -1), amountBox.Text)
+		rotateGrip(Vector3.new(0, 0, -1), getDegrees())
 	end)
 	
 end;
-task.spawn(C_27);
+task.spawn(C_24);
 
 return G2L["1"], require;
