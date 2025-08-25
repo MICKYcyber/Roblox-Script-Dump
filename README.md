@@ -2,4 +2,4 @@
 
 ## 📥 Loadstring
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool-Mover/refs/heads/main/Super%20Tool%20Mover.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool-Mover/refs/heads/main/Super%20Tool%20Mover%20V2"))()
