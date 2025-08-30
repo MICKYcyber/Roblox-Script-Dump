@@ -16,7 +16,13 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool
 ```
 # Shitty Script
 
-**Loadstring**
+📥 **Loadstring**
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool-Mover/refs/heads/main/Shittyscript.lua"))()
+```
+# Telekinesis
+
+📥 **Loadstring**
+```lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool-Mover/refs/heads/main/Telekinesis"))()
 ```
