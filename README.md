@@ -7,7 +7,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool
 
 ---
 
-# Toggle Anims
+# Toggle Anims ChatGPT Made
 
 📥 **Loadstring**
 ```lua
