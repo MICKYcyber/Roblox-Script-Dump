@@ -20,7 +20,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool-Mover/refs/heads/main/Shittyscript.lua"))()
 ```
-# Telekinesis
+# Basic Telekinesis
 
 📥 **Loadstring**
 ```lua
