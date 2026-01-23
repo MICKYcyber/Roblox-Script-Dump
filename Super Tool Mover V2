@@ -469,7 +469,7 @@ end
 
 -- Scripts
 
-local function ZDMI_fake_script() -- Tab1.LocalScript 
+local function JHRKQO_fake_script() -- Tab1.LocalScript 
 	local script = Instance.new('LocalScript', Tab1)
 	local req = require
 	local require = function(obj)
@@ -523,8 +523,8 @@ local function ZDMI_fake_script() -- Tab1.LocalScript
 	end
 	
 end
-coroutine.wrap(ZDMI_fake_script)()
-local function IKPCF_fake_script() -- Drag.tab1 
+coroutine.wrap(JHRKQO_fake_script)()
+local function GDBP_fake_script() -- Drag.tab1 
 	local script = Instance.new('LocalScript', Drag)
 	local req = require
 	local require = function(obj)
@@ -546,8 +546,8 @@ local function IKPCF_fake_script() -- Drag.tab1
 	resizer.makeResizable(frameToResize, minimumSize)
 	resizer.makeDraggable(script.Parent)
 end
-coroutine.wrap(IKPCF_fake_script)()
-local function TGIVVCF_fake_script() -- Drag.Sum 
+coroutine.wrap(GDBP_fake_script)()
+local function TUGWJ_fake_script() -- Drag.Sum 
 	local script = Instance.new('LocalScript', Drag)
 	local req = require
 	local require = function(obj)
@@ -573,8 +573,8 @@ local function TGIVVCF_fake_script() -- Drag.Sum
 	end)
 	
 end
-coroutine.wrap(TGIVVCF_fake_script)()
-local function DPCA_fake_script() -- Drag.tab2 
+coroutine.wrap(TUGWJ_fake_script)()
+local function INKYVK_fake_script() -- Drag.tab2 
 	local script = Instance.new('LocalScript', Drag)
 	local req = require
 	local require = function(obj)
@@ -595,8 +595,8 @@ local function DPCA_fake_script() -- Drag.tab2
 	
 	resizer.makeResizable(frameToResize, minimumSize)
 end
-coroutine.wrap(DPCA_fake_script)()
-local function UVMN_fake_script() -- Tab2.LocalScript 
+coroutine.wrap(INKYVK_fake_script)()
+local function OVKGFRU_fake_script() -- Tab2.LocalScript 
 	local script = Instance.new('LocalScript', Tab2)
 	local req = require
 	local require = function(obj)
@@ -654,8 +654,8 @@ local function UVMN_fake_script() -- Tab2.LocalScript
 	end
 	
 end
-coroutine.wrap(UVMN_fake_script)()
-local function ODVU_fake_script() -- Tab.LocalScript 
+coroutine.wrap(OVKGFRU_fake_script)()
+local function HBDFT_fake_script() -- Tab.LocalScript 
 	local script = Instance.new('LocalScript', Tab)
 	local req = require
 	local require = function(obj)
@@ -673,8 +673,8 @@ local function ODVU_fake_script() -- Tab.LocalScript
 		tab2.Visible = not tab1.Visible  -- hide Tab2 if Tab1 is visible
 	end)
 end
-coroutine.wrap(ODVU_fake_script)()
-local function RSMZ_fake_script() -- Spin.LocalScript 
+coroutine.wrap(HBDFT_fake_script)()
+local function GBBXEF_fake_script() -- Spin.LocalScript 
 	local script = Instance.new('LocalScript', Spin)
 	local req = require
 	local require = function(obj)
@@ -697,17 +697,17 @@ local function RSMZ_fake_script() -- Spin.LocalScript
 		local tool = character:FindFirstChildOfClass("Tool")
 			or backpack:WaitForChild(backpack:GetChildren()[1] and backpack:GetChildren()[1].Name)
 	
-		if tool then
-			tool.Parent = backpack
-			tool.Parent = character
-		end
 	
 		-- rotate the grip
 		while task.wait() do
+			if tool then
+				tool.Parent = backpack
+				tool.Parent = character
+			end
 			if tool and tool.Parent == character then
 				tool.Grip *= CFrame.Angles(0, math.rad(-1), 0)
 			end
 		end
 	end)
 end
-coroutine.wrap(RSMZ_fake_script)()
+coroutine.wrap(GBBXEF_fake_script)()
