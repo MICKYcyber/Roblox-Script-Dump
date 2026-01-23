@@ -44,15 +44,17 @@ local Scale_2 = Instance.new("TextBox")
 local UICorner_14 = Instance.new("UICorner")
 local Tab = Instance.new("TextButton")
 local UICorner_15 = Instance.new("UICorner")
+local Spin = Instance.new("TextButton")
+local UICorner_16 = Instance.new("UICorner")
 local guiResizer = Instance.new("Folder")
 local resizer = Instance.new("Frame")
 local dragger = Instance.new("ImageButton")
-local UICorner_16 = Instance.new("UICorner")
+local UICorner_17 = Instance.new("UICorner")
 
 -- Properties
 
 Escape.Name = "Escape"
-Escape.Parent = game:GetService("CoreGui")
+Escape.Parent = game.CoreGui
 Escape.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Escape.ResetOnSpawn = false
 
@@ -308,6 +310,20 @@ Tab.TextSize = 14
 
 UICorner_15.Parent = Tab
 
+Spin.Name = "Spin"
+Spin.Parent = Drag
+Spin.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Spin.BorderColor3 = Color3.new(0, 0, 0)
+Spin.BorderSizePixel = 0
+Spin.Position = UDim2.new(0.725000024, 0, 7.02666712, 0)
+Spin.Size = UDim2.new(0, 69, 0, 18)
+Spin.Font = Enum.Font.SourceSans
+Spin.Text = "Spin"
+Spin.TextColor3 = Color3.new(1, 1, 1)
+Spin.TextSize = 14
+
+UICorner_16.Parent = Spin
+
 guiResizer.Name = "guiResizer"
 guiResizer.Parent = Escape
 
@@ -331,8 +347,8 @@ dragger.Size = UDim2.new(2, 0, 2, 0)
 dragger.ZIndex = 2
 dragger.ImageTransparency = 1
 
-UICorner_16.Parent = dragger
-UICorner_16.CornerRadius = UDim.new(0.5, 0)
+UICorner_17.Parent = dragger
+UICorner_17.CornerRadius = UDim.new(0.5, 0)
 
 -- Module Scripts
 
@@ -453,7 +469,7 @@ end
 
 -- Scripts
 
-local function ZCYYI_fake_script() -- Tab1.LocalScript 
+local function ZDMI_fake_script() -- Tab1.LocalScript 
 	local script = Instance.new('LocalScript', Tab1)
 	local req = require
 	local require = function(obj)
@@ -507,8 +523,8 @@ local function ZCYYI_fake_script() -- Tab1.LocalScript
 	end
 	
 end
-coroutine.wrap(ZCYYI_fake_script)()
-local function PTXTL_fake_script() -- Drag.tab1 
+coroutine.wrap(ZDMI_fake_script)()
+local function IKPCF_fake_script() -- Drag.tab1 
 	local script = Instance.new('LocalScript', Drag)
 	local req = require
 	local require = function(obj)
@@ -530,8 +546,8 @@ local function PTXTL_fake_script() -- Drag.tab1
 	resizer.makeResizable(frameToResize, minimumSize)
 	resizer.makeDraggable(script.Parent)
 end
-coroutine.wrap(PTXTL_fake_script)()
-local function PPMSBUX_fake_script() -- Drag.Sum 
+coroutine.wrap(IKPCF_fake_script)()
+local function TGIVVCF_fake_script() -- Drag.Sum 
 	local script = Instance.new('LocalScript', Drag)
 	local req = require
 	local require = function(obj)
@@ -557,8 +573,8 @@ local function PPMSBUX_fake_script() -- Drag.Sum
 	end)
 	
 end
-coroutine.wrap(PPMSBUX_fake_script)()
-local function MSTNN_fake_script() -- Drag.tab2 
+coroutine.wrap(TGIVVCF_fake_script)()
+local function DPCA_fake_script() -- Drag.tab2 
 	local script = Instance.new('LocalScript', Drag)
 	local req = require
 	local require = function(obj)
@@ -579,8 +595,8 @@ local function MSTNN_fake_script() -- Drag.tab2
 	
 	resizer.makeResizable(frameToResize, minimumSize)
 end
-coroutine.wrap(MSTNN_fake_script)()
-local function FVYAX_fake_script() -- Tab2.LocalScript 
+coroutine.wrap(DPCA_fake_script)()
+local function UVMN_fake_script() -- Tab2.LocalScript 
 	local script = Instance.new('LocalScript', Tab2)
 	local req = require
 	local require = function(obj)
@@ -638,8 +654,8 @@ local function FVYAX_fake_script() -- Tab2.LocalScript
 	end
 	
 end
-coroutine.wrap(FVYAX_fake_script)()
-local function PGHRNP_fake_script() -- Tab.LocalScript 
+coroutine.wrap(UVMN_fake_script)()
+local function ODVU_fake_script() -- Tab.LocalScript 
 	local script = Instance.new('LocalScript', Tab)
 	local req = require
 	local require = function(obj)
@@ -657,4 +673,41 @@ local function PGHRNP_fake_script() -- Tab.LocalScript
 		tab2.Visible = not tab1.Visible  -- hide Tab2 if Tab1 is visible
 	end)
 end
-coroutine.wrap(PGHRNP_fake_script)()
+coroutine.wrap(ODVU_fake_script)()
+local function RSMZ_fake_script() -- Spin.LocalScript 
+	local script = Instance.new('LocalScript', Spin)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local Players = game:GetService("Players")
+		local player = Players.LocalPlayer
+	
+		local character = player.Character or player.CharacterAdded:Wait()
+		local humanoid = character:WaitForChild("Humanoid")
+		local backpack = player:WaitForChild("Backpack")
+	
+		-- find a tool (first one found)
+		local tool = character:FindFirstChildOfClass("Tool")
+			or backpack:WaitForChild(backpack:GetChildren()[1] and backpack:GetChildren()[1].Name)
+	
+		if tool then
+			tool.Parent = backpack
+			tool.Parent = character
+		end
+	
+		-- rotate the grip
+		while task.wait() do
+			if tool and tool.Parent == character then
+				tool.Grip *= CFrame.Angles(0, math.rad(-1), 0)
+			end
+		end
+	end)
+end
+coroutine.wrap(RSMZ_fake_script)()
