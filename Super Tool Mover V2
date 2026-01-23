@@ -1,116 +1,660 @@
-                                                                                 local Escape=Instance 
-                                                                        .new("ScreenGui");local Drag=Instance.new(      
-                                                                    "Frame");local Tab1=Instance.new("Frame");local Up=Instance.  
-                                                                new("TextButton");local UICorner=Instance.new("UICorner");local Down=   
-                                                            Instance.new("TextButton");local UICorner_2=Instance.new("UICorner");local    
-                                                          Forward=Instance.new("TextButton");local UICorner_3=Instance.new("UICorner");     
-                                                        local Back=Instance.new("TextButton");local UICorner_4=Instance.new("UICorner");local 
-                                                       Right=Instance.new("TextButton");local UICorner_5=Instance.new("UICorner");local Left=   
-                                                    Instance.new("TextButton");local UICorner_6=Instance.new("UICorner");local Scale=Instance.new 
-                                                  ("TextBox");local UICorner_7=Instance.new("UICorner");local TextLabel=Instance.new("TextLabel");  
-                                                  local Tab2=Instance.new("Frame");local Up_2=Instance.new("TextButton");local UICorner_8=Instance.   
-                                                new("UICorner");local Down_2=Instance.new("TextButton");local UICorner_9=Instance.new("UICorner");local 
-                                                 Forward_2=Instance.new("TextButton");local UICorner_10=Instance.new("UICorner");local Back_2=Instance.   
-                                              new("TextButton");local UICorner_11=Instance.new("UICorner");local Right_2=Instance.new("TextButton");local   
-                                              UICorner_12=Instance.new("UICorner");local Left_2=Instance.new("TextButton");local UICorner_13=Instance.new(  
-                                            "UICorner");local Scale_2=Instance.new("TextBox");local UICorner_14=Instance.new("UICorner");local Tab=Instance.  
-                                            new("TextButton");local UICorner_15=Instance.new("UICorner");local guiResizer=Instance.new("Folder");local resizer= 
-                                          Instance.new("Frame");local dragger=Instance.new("ImageButton");local UICorner_16=Instance.new("UICorner");Escape.Name= 
-                                          "Escape";Escape.Parent=game:GetService("CoreGui");Escape.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;Escape.ResetOnSpawn=  
-                                          false;Drag.Name="Drag";Drag.Parent=Escape;Drag.BackgroundColor3=Color3.new(0,0,0);Drag.BorderColor3=Color3.new(0,0,0);Drag. 
-                                          BorderSizePixel=0;Drag.Position=UDim2.new(0.0570793189,0,0.0706260055,0);Drag.Size=UDim2.new(0,320,0,15);Tab1.Name="Tab1";  
-                                        Tab1.Parent=Drag;Tab1.BackgroundColor3=Color3.new(0.309804,0.309804,0.309804);Tab1.BorderColor3=Color3.new(0,0,0);Tab1.         
-                                        BorderSizePixel=0;Tab1.Position=UDim2.new(0,0,1,0);Tab1.Size=UDim2.   --[[==============================]]new(0,320,0,150);Tab1.  
-                                        Visible=false;Up.Name="Up";Up.Parent=Tab1;Up.               --[[============================================]]BackgroundColor3=   
-                                        Color3.new(0.345098,0.345098,0.345098);Up.BorderColor3= --[[======================================================]]Color3.new(0,0, 
-                                      0);Up.BorderSizePixel=0;Up.Position=UDim2.new(        --[[==========================================================]]0.275000006,0,    
-                                      0.100000001,0);Up.Size=UDim2.new(0,69,0,18);Up.Font --[[==============================================================]]=Enum.Font.     
-                                      SourceSans;Up.Text="Up";Up.TextColor3=Color3.new(1, --[[================================================================]]1,1);Up.        
-                                      TextSize=14;UICorner.Parent=Up;Down.Name="Down";    --[[==================================================================]]Down.Parent=  
-                                      Tab1;Down.BackgroundColor3=Color3.new(0.345098,     --[[==================================================================]]0.345098,         
-                                    0.345098);Down.BorderColor3=Color3.new(0,0,0);Down.   --[[====================================================================]]              
-                    BorderSizePixel=0;Down.Position=UDim2.new(0.275000006,0,0.660000026,0 --[[====================================================================]]);Down.Size=    
-              UDim2.new(0,69,0,18);Down.Font=Enum.Font.SourceSans;Down.Text="Down";Down.  --[[======================================================================]]TextColor3=   
-            Color3.new(1,1,1);Down.TextSize=14;UICorner_2.Parent=Down;Forward.Name=       --[[======================================================================]]"Forward";    
-          Forward.Parent=Tab1;Forward.BackgroundColor3=Color3.new(0.345098,0.345098,      --[[======================================================================]]0.345098);    
-        Forward.BorderColor3=Color3.new(0,0,0);Forward.BorderSizePixel=0;Forward.Position --[[======================================================================]]=UDim2.new(   
-        0.275000006,0,0.486666679,0);Forward.Size=UDim2.new(0,69,0,18);Forward.Font=Enum. --[[======================================================================]]Font.         
-      SourceSans;Forward.Text="Forwards";Forward.TextColor3=Color3.new(1,1,1);Forward.    --[[======================================================================]]TextSize=14;  
-      UICorner_3.Parent=Forward;Back.Name="Back";Back.Parent=Tab1;Back.BackgroundColor3=    --[[==================================================================]]Color3.new(     
-      0.345098,0.345098,0.345098);Back.BorderColor3=Color3.new(0,0,0);Back.BorderSizePixel= --[[================================================================]]0;Back.Position=  
-    UDim2.new(0.275000006,0,0.293333322,0);Back.Size=UDim2.new(0,69,0,18);Back.Font=Enum.   --[[==============================================================]]Font.SourceSans;  
-    Back.Text="Backwards";Back.TextColor3=Color3.new(1,1,1);Back.TextSize=14;UICorner_4.      --[[==========================================================]]Parent=Back;Right.  
-    Name="Right";Right.Parent=Tab1;Right.BackgroundColor3=Color3.new(0.345098,0.345098,0.345098 --[[====================================================]]);Right.BorderColor3=   
-    Color3.new(0,0,0);Right.BorderSizePixel=0;Right.Position=UDim2.new(0.509374976,0,0.486666679, --[[==============================================]]0);Right.Size=UDim2.new(0 
-    ,69,0,18);Right.Font=Enum.Font.SourceSans;Right.Text="Right";Right.TextColor3=Color3.new(1,1,1);  --[[====================================]]Right.TextSize=14;UICorner_5. 
-    Parent=Right;Left.Name="Left";Left.Parent=Tab1;Left.BackgroundColor3=Color3.new(0.345098,0.345098,    --[[========================]]0.345098);Left.BorderColor3=Color3.   
-    new(0,0,0);Left.BorderSizePixel=0;Left.Position=UDim2.new(0.0375000015,0,0.486666679,0);Left.Size=UDim2.new(0,70,0,18);Left.Font=Enum.Font.SourceSans;Left.Text="Left"; 
-  Left.TextColor3=Color3.new(1,1,1);Left.TextSize=14;UICorner_6.Parent=Left;Scale.Name="Scale";Scale.Parent=Tab1;Scale.BackgroundColor3=Color3.new(0.403922,0.403922,     
-  0.403922);Scale.BorderColor3=Color3.new(0,0,0);Scale.BorderSizePixel=0;Scale.Position=UDim2.new(0.568750083,0,0.095238097,0);Scale.Size=UDim2.new(0,118,0,38);Scale.  
-  Font=Enum.Font.SourceSans;Scale.PlaceholderColor3=Color3.new(1,1,1);Scale.PlaceholderText="Move Settings";Scale.Text="";Scale.TextColor3=Color3.new(1,1,1);Scale.       
-  TextSize=14;UICorner_7.Parent=Scale;TextLabel.Name="";TextLabel.Parent=Drag;TextLabel.BackgroundColor3=Color3.new(1,1,1);TextLabel.BackgroundTransparency=1;TextLabel.  
-  BorderColor3=Color3.new(0,0,0);TextLabel.BorderSizePixel=0;TextLabel.Size=UDim2.new(0,25,0,15);TextLabel.Font=Enum.Font.SourceSans;TextLabel.Text="STM";TextLabel.      
-  TextColor3=Color3.new(1,1,1);TextLabel.TextSize=14;TextLabel.TextYAlignment=Enum.TextYAlignment.Top;Tab2.Name="Tab2";Tab2.Parent=Drag;Tab2.BackgroundColor3=Color3.new( 
-  0.309804,0.309804,0.309804);Tab2.BorderColor3=Color3.new(0,0,0);Tab2.BorderSizePixel=0;Tab2.Position=UDim2.new(0,0,1,0);Tab2.Size=UDim2.new(0,320,0,150);Up_2.Name="Up" 
-  ;Up_2.Parent=Tab2;Up_2.BackgroundColor3=Color3.new(0.345098,0.345098,0.345098);Up_2.BorderColor3=Color3.new(0,0,0);Up_2.BorderSizePixel=0;Up_2.Position=UDim2.new(      
-  0.275000006,0,0.100000001,0);Up_2.Size=UDim2.new(0,69,0,18);Up_2.Font=Enum.Font.SourceSans;Up_2.Text="Pitch Up";Up_2.TextColor3=Color3.new(1,1,1);Up_2.TextSize=14;     
-  UICorner_8.Parent=Up_2;Down_2.Name="Down";Down_2.Parent=Tab2;Down_2.BackgroundColor3=Color3.new(0.345098,0.345098,0.345098);Down_2.BorderColor3=Color3.new(0,0,0);      
-  Down_2.BorderSizePixel=0;Down_2.Position=UDim2.new(0.275000006,0,0.660000026,0);Down_2.Size=UDim2.new(0,69,0,18);Down_2.Font=Enum.Font.SourceSans;Down_2.Text=          
-  "Pitch Down";Down_2.TextColor3=Color3.new(1,1,1);Down_2.TextSize=14;UICorner_9.Parent=Down_2;Forward_2.Name="Forward";Forward_2.Parent=Tab2;Forward_2.BackgroundColor3=   
-  Color3.new(0.345098,0.345098,0.345098);Forward_2.BorderColor3=Color3.new(0,0,0);Forward_2.BorderSizePixel=0;Forward_2.Position=UDim2.new(0.275000006,0,0.486666679,0);    
-  Forward_2.Size=UDim2.new(0,69,0,18);Forward_2.Font=Enum.Font.SourceSans;Forward_2.Text="Pitch Forward";Forward_2.TextColor3=Color3.new(1,1,1);Forward_2.TextSize=14;      
-  UICorner_10.Parent=Forward_2;Back_2.Name="Back";Back_2.Parent=Tab2;Back_2.BackgroundColor3=Color3.new(0.345098,0.345098,0.345098);Back_2.BorderColor3=Color3.new(0,0,0);  
-  Back_2.BorderSizePixel=0;Back_2.Position=UDim2.new(0.275000006,0,0.293333322,0);Back_2.Size=UDim2.new(0,69,0,18);Back_2.Font=Enum.Font.SourceSans;Back_2.Text=            
-  "Pitch Back";Back_2.TextColor3=Color3.new(1,1,1);Back_2.TextSize=14;UICorner_11.Parent=Back_2;Right_2.Name="Right";Right_2.Parent=Tab2;Right_2.BackgroundColor3=Color3.   
-  new(0.345098,0.345098,0.345098);Right_2.BorderColor3=Color3.new(0,0,0);Right_2.BorderSizePixel=0;Right_2.Position=UDim2.new(0.509374976,0,0.486666679,0);Right_2.Size=    
-  UDim2.new(0,69,0,18);Right_2.Font=Enum.Font.SourceSans;Right_2.Text="Pitch Right";Right_2.TextColor3=Color3.new(1,1,1);Right_2.TextSize=14;UICorner_12.Parent=Right_2;    
-  Left_2.Name="Left";Left_2.Parent=Tab2;Left_2.BackgroundColor3=Color3.new(0.345098,0.345098,0.345098);Left_2.BorderColor3=Color3.new(0,0,0);Left_2.BorderSizePixel=0;      
-  Left_2.Position=UDim2.new(0.0375000015,0,0.486666679,0);Left_2.Size=UDim2.new(0,70,0,18);Left_2.Font=Enum.Font.SourceSans;Left_2.Text="Pitch Left";Left_2.TextColor3=     
-  Color3.new(1,1,1);Left_2.TextSize=14;UICorner_13.Parent=Left_2;Scale_2.Name="Scale";Scale_2.Parent=Tab2;Scale_2.BackgroundColor3=Color3.new(0.403922,0.403922,0.403922);  
-  Scale_2.BorderColor3=Color3.new(0,0,0);Scale_2.BorderSizePixel=0;Scale_2.Position=UDim2.new(0.568750083,0,0.095238097,0);Scale_2.Size=UDim2.new(0,118,0,38);Scale_2.Font= 
-  Enum.Font.SourceSans;Scale_2.PlaceholderColor3=Color3.new(1,1,1);Scale_2.PlaceholderText="Ptich Settings";Scale_2.Text="";Scale_2.TextColor3=Color3.new(1,1,1);Scale_2.   
-  TextSize=14;UICorner_14.Parent=Scale_2;Tab.Name="Tab";Tab.Parent=Drag;Tab.BackgroundColor3=Color3.new(0.345098,0.345098,0.345098);Tab.BorderColor3=Color3.new(0,0,0);   
-  Tab.BorderSizePixel=0;Tab.Position=UDim2.new(0.725000024,0,8.62666702,0);Tab.Size=UDim2.new(0,69,0,18);Tab.Font=Enum.Font.SourceSans;Tab.Text="Switch";Tab.TextColor3=  
-  Color3.new(1,1,1);Tab.TextSize=14;UICorner_15.Parent=Tab;guiResizer.Name="guiResizer";guiResizer.Parent=Escape;resizer.Name="resizer";resizer.Parent=guiResizer;resizer 
-    .BackgroundColor3=Color3.new(1,1,1);resizer.BackgroundTransparency=1;resizer.BorderColor3=Color3.new(0.105882,0.164706,0.207843);resizer.ClipsDescendants=true;       
-    resizer.Position=UDim2.new(1, -30,1, -30);resizer.Size=UDim2.new(0,30,0,30);resizer.SizeConstraint=Enum.SizeConstraint.RelativeXX;dragger.Name="dragger";dragger.     
-    Parent=resizer;dragger.BackgroundColor3=Color3.new(1,0.333333,0);dragger.BackgroundTransparency=1;dragger.BorderColor3=Color3.new(0.105882,0.164706,0.207843);dragger 
-    .BorderSizePixel=0;dragger.Size=UDim2.new(2,0,2,0);dragger.ZIndex=2;dragger.ImageTransparency=1;UICorner_16.Parent=dragger;UICorner_16.CornerRadius=UDim.new(0.5,0);  
-      local fake_module_scripts={};do local script=Instance.new("ModuleScript",guiResizer);script.Name="handler";local function module_script() local module={};local   
-      mouse=game.Players.LocalPlayer:GetMouse();local DRAGGER_SIZE=30;local DRAGGER_TRANSPARENCY=0.5;local dragging=false;module.makeResizable=function(obj,minSize)    
-      local resizer=script.Parent.resizer:Clone();local dragger=resizer.dragger;resizer.Size=UDim2.fromOffset(DRAGGER_SIZE,DRAGGER_SIZE);resizer.Position=UDim2.new(1,  
-        -DRAGGER_SIZE,1, -DRAGGER_SIZE);local duic=dragger.UICorner;minSize=minSize or Vector2.new(160,90) ;local startDrag,startSize;local gui=obj:                    
-        FindFirstAncestorWhichIsA("ScreenGui");resizer.Parent=obj;local function finishResize(tr) dragger.Position=UDim2.new(0,0,0,0);dragger.Size=UDim2.new(2,0,2,0);  
-        dragger.Parent=resizer;dragger.BackgroundTransparency=tr;duic.Parent=dragger;startDrag=nil;end dragger.MouseButton1Down:Connect(function() if  not startDrag    
-          then startSize=obj.AbsoluteSize;startDrag=Vector2.new(mouse.X,mouse.Y);dragger.BackgroundTransparency=1;dragger.Size=UDim2.fromOffset(gui.AbsoluteSize.X,   
-            gui.AbsoluteSize.Y);dragger.Position=UDim2.new(0,0,0,0);duic.Parent=nil;dragger.Parent=gui;end end);dragger.MouseMoved:Connect(function() if startDrag    
-              then local m=Vector2.new(mouse.X,mouse.Y);local mouseMoved=Vector2.new(m.X-startDrag.X ,m.Y-startDrag.Y );local s=startSize + mouseMoved ;local sx=math 
-                .max(minSize.X,s.X);local sy=math.max(minSize.Y,s.Y);obj.Size=UDim2.fromOffset(sx,sy);end end);dragger.MouseEnter:Connect(function() finishResize(    
-                  DRAGGER_TRANSPARENCY);end);dragger.MouseLeave:Connect(function() finishResize(1);end);dragger.MouseButton1Up:Connect(function() finishResize(     
-                      DRAGGER_TRANSPARENCY);end);end;module.makeDraggable=function(obj) local UIS=game:GetService("UserInputService");local dragInput,dragStart;    
-                                  local startPos=obj.Position;local dragger=obj;local function updateInput(input) local offset=input.Position-dragStart ;local      
-                                      Position=UDim2.new(startPos.X.Scale,startPos.X.Offset + offset.X ,startPos.Y.Scale,startPos.Y.Offset + offset.Y );game:       
-                                      GetService("TweenService"):Create(obj,TweenInfo.new(0.25),{           Position=Position}):Play();end dragger.InputBegan:      
-                                      Connect(function(input) if (((input.UserInputType==Enum.              UserInputType.MouseButton1) or (input.UserInputType== 
-                                      Enum.UserInputType.Touch)) and  not UIS:GetFocusedTextBox())          then dragging=true;dragStart=input.Position;startPos= 
-                                      obj.Position;module.dragged=obj;input.Changed:Connect(                function() if (input.UserInputState==Enum.            
-                                      UserInputState.End) then dragging=false;end end);end end);              dragger.InputChanged:Connect(function(input) if ((  
-                                      input.UserInputType==Enum.UserInputType.MouseMovement) or (             input.UserInputType==Enum.UserInputType.Touch))     
-                                      then dragInput=input;end end);UIS.InputChanged:Connect(                 function(input) if ((input==dragInput) and        
-                                        dragging) then updateInput(input);end end);end;return                 module;end fake_module_scripts[script]=           
-                                        module_script;end local function ZCYYI_fake_script() local              script=Instance.new("LocalScript",Tab1);local   
-                                        req=require;local require=function(obj) local fake=                     fake_module_scripts[obj];if fake then return  
-                                        fake();end return req(obj);end;local par=script.Parent;                 local player=game:GetService("Players").      
-                                        LocalPlayer;local char=player.Character or player.                        Character:Wait() ;local backpack=player:  
-                                        WaitForChild("Backpack");local function getMoveAmount()                   local text=par.Scale.Text;local number=   
-                                          tonumber(text);if number then return number;else return                    1;end end local directionNames={     
-                                          "Left","Right","Up","Down","Forward","Back"};for _,                         name in ipairs(directionNames)  
-                                            do local button=par:WaitForChild(name);if button:                           IsA("TextButton") then    
-                                            button.MouseButton1Click:Connect(function() local                                  tool=char: 
-                                              FindFirstChildOfClass("Tool");if  not tool    
-                                                then return;end local MOVE_AMOUNT=        
-                                                    getMoveAmount();local directions={  
-                                                          Left=CFrame.new( -      
+--[[
+
+		Gui2Lua™
+		10zOfficial
+		Version 1.0.0
+
+]]
 
 
-MOVE_AMOUNT,0,0),Right=CFrame.new(MOVE_AMOUNT,0,0),Up=CFrame.new(0,MOVE_AMOUNT,0),Down=CFrame.new(0, -MOVE_AMOUNT,0),Forward=CFrame.new(0,0, -MOVE_AMOUNT),Back=CFrame.new(0,0,MOVE_AMOUNT)};tool.Grip=tool.Grip * directions[name] ;if tool then tool.Parent=backpack;tool.Parent=char;end end);end end end coroutine.wrap(ZCYYI_fake_script)();local function PTXTL_fake_script() local script=Instance.new("LocalScript",Drag);local req=require;local require=function(obj) local fake=fake_module_scripts[obj];if fake then return fake();end return req(obj);end;resizer=require(script.Parent.Parent.guiResizer.handler);frameToResize=script.Parent.Tab1;minimumSize=Vector2.new(240,160);resizer.makeResizable(frameToResize,minimumSize);resizer.makeDraggable(script.Parent);end coroutine.wrap(PTXTL_fake_script)();local function PPMSBUX_fake_script() local script=Instance.new("LocalScript",Drag);local req=require;local require=function(obj) local fake=fake_module_scripts[obj];if fake then return fake();end return req(obj);end;local RunService=game:GetService("RunService");RunService.Heartbeat:Connect(function() local parent=script.Parent;local tab=(parent.Tab1.Visible and parent.Tab1) or parent.Tab2 ;parent.Size=UDim2.new(tab.Size.X.Scale,tab.Size.X.Offset,parent.Size.Y.Scale,parent.Size.Y.Offset);end);end coroutine.wrap(PPMSBUX_fake_script)();local function MSTNN_fake_script() local script=Instance.new("LocalScript",Drag);local req=require;local require=function(obj) local fake=fake_module_scripts[obj];if fake then return fake();end return req(obj);end;resizer=require(script.Parent.Parent.guiResizer.handler);frameToResize=script.Parent.Tab2;minimumSize=Vector2.new(240,160);resizer.makeResizable(frameToResize,minimumSize);end coroutine.wrap(MSTNN_fake_script)();local function FVYAX_fake_script() local script=Instance.new("LocalScript",Tab2);local req=require;local require=function(obj) local fake=fake_module_scripts[obj];if fake then return fake();end return req(obj);end;local par=script.Parent;local player=game:GetService("Players").LocalPlayer;local char=player.Character or player.Character:Wait() ;local backpack=player:WaitForChild("Backpack");local function getRotationAmount() local text=par.Scale.Text;local number=tonumber(text);if number then return number;else return 45;end end local directionNames={"Left","Right","Up","Down","Forward","Back"};for _,name in ipairs(directionNames) do local button=par:WaitForChild(name);if button:IsA("TextButton") then button.MouseButton1Click:Connect(function() local tool=char:FindFirstChildOfClass("Tool");if  not tool then return;end local ROTATION_AMOUNT=getRotationAmount();local directions={Left=CFrame.Angles(0,math.rad( -ROTATION_AMOUNT),0),Right=CFrame.Angles(0,math.rad(ROTATION_AMOUNT),0),Up=CFrame.Angles(math.rad(ROTATION_AMOUNT),0,0),Down=CFrame.Angles(math.rad( -ROTATION_AMOUNT),0,0),Forward=CFrame.Angles(0,0,math.rad( -ROTATION_AMOUNT)),Back=CFrame.Angles(0,0,math.rad(ROTATION_AMOUNT))};tool.Grip=tool.Grip * directions[name] ;if tool then tool.Parent=backpack;tool.Parent=char;end end);end end end coroutine.wrap(FVYAX_fake_script)();local function PGHRNP_fake_script() local script=Instance.new("LocalScript",Tab);local req=require;local require=function(obj) local fake=fake_module_scripts[obj];if fake then return fake();end return req(obj);end;script.Parent.MouseButton1Click:Connect(function() local tab1=script.Parent.Parent.Tab1;local tab2=script.Parent.Parent.Tab2;tab1.Visible= not tab1.Visible;tab2.Visible= not tab1.Visible;end);end coroutine.wrap(PGHRNP_fake_script)();
+-- Instances
+
+local Escape = Instance.new("ScreenGui")
+local Drag = Instance.new("Frame")
+local Tab1 = Instance.new("Frame")
+local Up = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local Down = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Forward = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local Back = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local Right = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local Left = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local Scale = Instance.new("TextBox")
+local UICorner_7 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local Tab2 = Instance.new("Frame")
+local Up_2 = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local Down_2 = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+local Forward_2 = Instance.new("TextButton")
+local UICorner_10 = Instance.new("UICorner")
+local Back_2 = Instance.new("TextButton")
+local UICorner_11 = Instance.new("UICorner")
+local Right_2 = Instance.new("TextButton")
+local UICorner_12 = Instance.new("UICorner")
+local Left_2 = Instance.new("TextButton")
+local UICorner_13 = Instance.new("UICorner")
+local Scale_2 = Instance.new("TextBox")
+local UICorner_14 = Instance.new("UICorner")
+local Tab = Instance.new("TextButton")
+local UICorner_15 = Instance.new("UICorner")
+local guiResizer = Instance.new("Folder")
+local resizer = Instance.new("Frame")
+local dragger = Instance.new("ImageButton")
+local UICorner_16 = Instance.new("UICorner")
+
+-- Properties
+
+Escape.Name = "Escape"
+Escape.Parent = game:GetService("CoreGui")
+Escape.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Escape.ResetOnSpawn = false
+
+Drag.Name = "Drag"
+Drag.Parent = Escape
+Drag.BackgroundColor3 = Color3.new(0, 0, 0)
+Drag.BorderColor3 = Color3.new(0, 0, 0)
+Drag.BorderSizePixel = 0
+Drag.Position = UDim2.new(0.0570793189, 0, 0.0706260055, 0)
+Drag.Size = UDim2.new(0, 320, 0, 15)
+
+Tab1.Name = "Tab1"
+Tab1.Parent = Drag
+Tab1.BackgroundColor3 = Color3.new(0.309804, 0.309804, 0.309804)
+Tab1.BorderColor3 = Color3.new(0, 0, 0)
+Tab1.BorderSizePixel = 0
+Tab1.Position = UDim2.new(0, 0, 1, 0)
+Tab1.Size = UDim2.new(0, 320, 0, 150)
+Tab1.Visible = false
+
+Up.Name = "Up"
+Up.Parent = Tab1
+Up.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Up.BorderColor3 = Color3.new(0, 0, 0)
+Up.BorderSizePixel = 0
+Up.Position = UDim2.new(0.275000006, 0, 0.100000001, 0)
+Up.Size = UDim2.new(0, 69, 0, 18)
+Up.Font = Enum.Font.SourceSans
+Up.Text = "Up"
+Up.TextColor3 = Color3.new(1, 1, 1)
+Up.TextSize = 14
+
+UICorner.Parent = Up
+
+Down.Name = "Down"
+Down.Parent = Tab1
+Down.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Down.BorderColor3 = Color3.new(0, 0, 0)
+Down.BorderSizePixel = 0
+Down.Position = UDim2.new(0.275000006, 0, 0.660000026, 0)
+Down.Size = UDim2.new(0, 69, 0, 18)
+Down.Font = Enum.Font.SourceSans
+Down.Text = "Down"
+Down.TextColor3 = Color3.new(1, 1, 1)
+Down.TextSize = 14
+
+UICorner_2.Parent = Down
+
+Forward.Name = "Forward"
+Forward.Parent = Tab1
+Forward.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Forward.BorderColor3 = Color3.new(0, 0, 0)
+Forward.BorderSizePixel = 0
+Forward.Position = UDim2.new(0.275000006, 0, 0.486666679, 0)
+Forward.Size = UDim2.new(0, 69, 0, 18)
+Forward.Font = Enum.Font.SourceSans
+Forward.Text = "Forwards"
+Forward.TextColor3 = Color3.new(1, 1, 1)
+Forward.TextSize = 14
+
+UICorner_3.Parent = Forward
+
+Back.Name = "Back"
+Back.Parent = Tab1
+Back.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Back.BorderColor3 = Color3.new(0, 0, 0)
+Back.BorderSizePixel = 0
+Back.Position = UDim2.new(0.275000006, 0, 0.293333322, 0)
+Back.Size = UDim2.new(0, 69, 0, 18)
+Back.Font = Enum.Font.SourceSans
+Back.Text = "Backwards"
+Back.TextColor3 = Color3.new(1, 1, 1)
+Back.TextSize = 14
+
+UICorner_4.Parent = Back
+
+Right.Name = "Right"
+Right.Parent = Tab1
+Right.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Right.BorderColor3 = Color3.new(0, 0, 0)
+Right.BorderSizePixel = 0
+Right.Position = UDim2.new(0.509374976, 0, 0.486666679, 0)
+Right.Size = UDim2.new(0, 69, 0, 18)
+Right.Font = Enum.Font.SourceSans
+Right.Text = "Right"
+Right.TextColor3 = Color3.new(1, 1, 1)
+Right.TextSize = 14
+
+UICorner_5.Parent = Right
+
+Left.Name = "Left"
+Left.Parent = Tab1
+Left.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Left.BorderColor3 = Color3.new(0, 0, 0)
+Left.BorderSizePixel = 0
+Left.Position = UDim2.new(0.0375000015, 0, 0.486666679, 0)
+Left.Size = UDim2.new(0, 70, 0, 18)
+Left.Font = Enum.Font.SourceSans
+Left.Text = "Left"
+Left.TextColor3 = Color3.new(1, 1, 1)
+Left.TextSize = 14
+
+UICorner_6.Parent = Left
+
+Scale.Name = "Scale"
+Scale.Parent = Tab1
+Scale.BackgroundColor3 = Color3.new(0.403922, 0.403922, 0.403922)
+Scale.BorderColor3 = Color3.new(0, 0, 0)
+Scale.BorderSizePixel = 0
+Scale.Position = UDim2.new(0.568750083, 0, 0.095238097, 0)
+Scale.Size = UDim2.new(0, 118, 0, 38)
+Scale.Font = Enum.Font.SourceSans
+Scale.PlaceholderColor3 = Color3.new(1, 1, 1)
+Scale.PlaceholderText = "Move Settings"
+Scale.Text = ""
+Scale.TextColor3 = Color3.new(1, 1, 1)
+Scale.TextSize = 14
+
+UICorner_7.Parent = Scale
+
+TextLabel.Name = ""
+TextLabel.Parent = Drag
+TextLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel.BackgroundTransparency = 1
+TextLabel.BorderColor3 = Color3.new(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 25, 0, 15)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "STM"
+TextLabel.TextColor3 = Color3.new(1, 1, 1)
+TextLabel.TextSize = 14
+TextLabel.TextYAlignment = Enum.TextYAlignment.Top
+
+Tab2.Name = "Tab2"
+Tab2.Parent = Drag
+Tab2.BackgroundColor3 = Color3.new(0.309804, 0.309804, 0.309804)
+Tab2.BorderColor3 = Color3.new(0, 0, 0)
+Tab2.BorderSizePixel = 0
+Tab2.Position = UDim2.new(0, 0, 1, 0)
+Tab2.Size = UDim2.new(0, 320, 0, 150)
+
+Up_2.Name = "Up"
+Up_2.Parent = Tab2
+Up_2.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Up_2.BorderColor3 = Color3.new(0, 0, 0)
+Up_2.BorderSizePixel = 0
+Up_2.Position = UDim2.new(0.275000006, 0, 0.100000001, 0)
+Up_2.Size = UDim2.new(0, 69, 0, 18)
+Up_2.Font = Enum.Font.SourceSans
+Up_2.Text = "Pitch Up"
+Up_2.TextColor3 = Color3.new(1, 1, 1)
+Up_2.TextSize = 14
+
+UICorner_8.Parent = Up_2
+
+Down_2.Name = "Down"
+Down_2.Parent = Tab2
+Down_2.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Down_2.BorderColor3 = Color3.new(0, 0, 0)
+Down_2.BorderSizePixel = 0
+Down_2.Position = UDim2.new(0.275000006, 0, 0.660000026, 0)
+Down_2.Size = UDim2.new(0, 69, 0, 18)
+Down_2.Font = Enum.Font.SourceSans
+Down_2.Text = "Pitch Down"
+Down_2.TextColor3 = Color3.new(1, 1, 1)
+Down_2.TextSize = 14
+
+UICorner_9.Parent = Down_2
+
+Forward_2.Name = "Forward"
+Forward_2.Parent = Tab2
+Forward_2.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Forward_2.BorderColor3 = Color3.new(0, 0, 0)
+Forward_2.BorderSizePixel = 0
+Forward_2.Position = UDim2.new(0.275000006, 0, 0.486666679, 0)
+Forward_2.Size = UDim2.new(0, 69, 0, 18)
+Forward_2.Font = Enum.Font.SourceSans
+Forward_2.Text = "Pitch Forward"
+Forward_2.TextColor3 = Color3.new(1, 1, 1)
+Forward_2.TextSize = 14
+
+UICorner_10.Parent = Forward_2
+
+Back_2.Name = "Back"
+Back_2.Parent = Tab2
+Back_2.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Back_2.BorderColor3 = Color3.new(0, 0, 0)
+Back_2.BorderSizePixel = 0
+Back_2.Position = UDim2.new(0.275000006, 0, 0.293333322, 0)
+Back_2.Size = UDim2.new(0, 69, 0, 18)
+Back_2.Font = Enum.Font.SourceSans
+Back_2.Text = "Pitch Back"
+Back_2.TextColor3 = Color3.new(1, 1, 1)
+Back_2.TextSize = 14
+
+UICorner_11.Parent = Back_2
+
+Right_2.Name = "Right"
+Right_2.Parent = Tab2
+Right_2.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Right_2.BorderColor3 = Color3.new(0, 0, 0)
+Right_2.BorderSizePixel = 0
+Right_2.Position = UDim2.new(0.509374976, 0, 0.486666679, 0)
+Right_2.Size = UDim2.new(0, 69, 0, 18)
+Right_2.Font = Enum.Font.SourceSans
+Right_2.Text = "Pitch Right"
+Right_2.TextColor3 = Color3.new(1, 1, 1)
+Right_2.TextSize = 14
+
+UICorner_12.Parent = Right_2
+
+Left_2.Name = "Left"
+Left_2.Parent = Tab2
+Left_2.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Left_2.BorderColor3 = Color3.new(0, 0, 0)
+Left_2.BorderSizePixel = 0
+Left_2.Position = UDim2.new(0.0375000015, 0, 0.486666679, 0)
+Left_2.Size = UDim2.new(0, 70, 0, 18)
+Left_2.Font = Enum.Font.SourceSans
+Left_2.Text = "Pitch Left"
+Left_2.TextColor3 = Color3.new(1, 1, 1)
+Left_2.TextSize = 14
+
+UICorner_13.Parent = Left_2
+
+Scale_2.Name = "Scale"
+Scale_2.Parent = Tab2
+Scale_2.BackgroundColor3 = Color3.new(0.403922, 0.403922, 0.403922)
+Scale_2.BorderColor3 = Color3.new(0, 0, 0)
+Scale_2.BorderSizePixel = 0
+Scale_2.Position = UDim2.new(0.568750083, 0, 0.095238097, 0)
+Scale_2.Size = UDim2.new(0, 118, 0, 38)
+Scale_2.Font = Enum.Font.SourceSans
+Scale_2.PlaceholderColor3 = Color3.new(1, 1, 1)
+Scale_2.PlaceholderText = "Ptich Settings"
+Scale_2.Text = ""
+Scale_2.TextColor3 = Color3.new(1, 1, 1)
+Scale_2.TextSize = 14
+
+UICorner_14.Parent = Scale_2
+
+Tab.Name = "Tab"
+Tab.Parent = Drag
+Tab.BackgroundColor3 = Color3.new(0.345098, 0.345098, 0.345098)
+Tab.BorderColor3 = Color3.new(0, 0, 0)
+Tab.BorderSizePixel = 0
+Tab.Position = UDim2.new(0.725000024, 0, 8.62666702, 0)
+Tab.Size = UDim2.new(0, 69, 0, 18)
+Tab.Font = Enum.Font.SourceSans
+Tab.Text = "Switch"
+Tab.TextColor3 = Color3.new(1, 1, 1)
+Tab.TextSize = 14
+
+UICorner_15.Parent = Tab
+
+guiResizer.Name = "guiResizer"
+guiResizer.Parent = Escape
+
+resizer.Name = "resizer"
+resizer.Parent = guiResizer
+resizer.BackgroundColor3 = Color3.new(1, 1, 1)
+resizer.BackgroundTransparency = 1
+resizer.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+resizer.ClipsDescendants = true
+resizer.Position = UDim2.new(1, -30, 1, -30)
+resizer.Size = UDim2.new(0, 30, 0, 30)
+resizer.SizeConstraint = Enum.SizeConstraint.RelativeXX
+
+dragger.Name = "dragger"
+dragger.Parent = resizer
+dragger.BackgroundColor3 = Color3.new(1, 0.333333, 0)
+dragger.BackgroundTransparency = 1
+dragger.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+dragger.BorderSizePixel = 0
+dragger.Size = UDim2.new(2, 0, 2, 0)
+dragger.ZIndex = 2
+dragger.ImageTransparency = 1
+
+UICorner_16.Parent = dragger
+UICorner_16.CornerRadius = UDim.new(0.5, 0)
+
+-- Module Scripts
+
+local fake_module_scripts = {}
+
+do -- guiResizer.handler
+	local script = Instance.new('ModuleScript', guiResizer)
+	script.Name = "handler"
+	local function module_script()
+		local module = {}
+		
+		local mouse = game.Players.LocalPlayer:GetMouse()
+		
+		local DRAGGER_SIZE = 30
+		local DRAGGER_TRANSPARENCY = .5
+		
+		local dragging = false
+		
+		function module.makeResizable(obj:GuiObject, minSize)
+			
+			local resizer = script.Parent.resizer:Clone()
+			local dragger = resizer.dragger
+			
+			resizer.Size = UDim2.fromOffset(DRAGGER_SIZE, DRAGGER_SIZE)
+			resizer.Position = UDim2.new(1, -DRAGGER_SIZE, 1, -DRAGGER_SIZE)
+			
+			local duic = dragger.UICorner
+			minSize = minSize or Vector2.new(160, 90)
+			
+			local startDrag, startSize
+			local gui = obj:FindFirstAncestorWhichIsA("ScreenGui")
+			resizer.Parent = obj
+		
+			local function finishResize(tr)
+				dragger.Position = UDim2.new(0,0,0,0)
+				dragger.Size = UDim2.new(2,0,2,0)
+				dragger.Parent = resizer
+				dragger.BackgroundTransparency = tr
+				duic.Parent = dragger
+				startDrag = nil
+			end
+			dragger.MouseButton1Down:Connect(function()
+				if not startDrag then
+					startSize = obj.AbsoluteSize			
+					startDrag = Vector2.new(mouse.X, mouse.Y)
+					dragger.BackgroundTransparency = 1
+					dragger.Size = UDim2.fromOffset(gui.AbsoluteSize.X, gui.AbsoluteSize.Y)
+					dragger.Position = UDim2.new(0,0,0,0)
+					duic.Parent = nil
+					dragger.Parent = gui
+				end
+			end)	
+			dragger.MouseMoved:Connect(function()
+				if startDrag then		
+					local m = Vector2.new(mouse.X, mouse.Y)
+					local mouseMoved = Vector2.new(m.X - startDrag.X, m.Y - startDrag.Y)
+					
+					local s = startSize + mouseMoved
+					local sx = math.max(minSize.X, s.X) 
+					local sy = math.max(minSize.Y, s.Y)
+					
+					obj.Size = UDim2.fromOffset(sx, sy)
+					
+				end
+			end)
+			dragger.MouseEnter:Connect(function()
+				finishResize(DRAGGER_TRANSPARENCY)				
+			end)
+			dragger.MouseLeave:Connect(function()
+				finishResize(1)
+			end)		
+			dragger.MouseButton1Up:Connect(function()
+				finishResize(DRAGGER_TRANSPARENCY)
+			end)	
+		end
+		
+		function module.makeDraggable(obj)
+			local UIS = game:GetService("UserInputService")
+			local dragInput, dragStart
+			local startPos = obj.Position 
+			local dragger = obj	
+			local function updateInput(input)
+				local offset = input.Position - dragStart
+				local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + offset.X, startPos.Y.Scale, startPos.Y.Offset + offset.Y)
+				game:GetService("TweenService"):Create(obj, TweenInfo.new(0.25), {Position = Position}):Play()
+			end
+			dragger.InputBegan:Connect(function(input)
+				if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) and not UIS:GetFocusedTextBox() then
+					dragging = true
+					dragStart = input.Position
+					startPos = obj.Position
+					module.dragged = obj
+					input.Changed:Connect(function()
+						if input.UserInputState == Enum.UserInputState.End then
+							dragging = false
+						end
+					end)
+				end
+			end)
+			dragger.InputChanged:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+					dragInput = input
+				end
+			end)
+			UIS.InputChanged:Connect(function(input)
+				if input == dragInput and dragging then
+					updateInput(input)
+				end
+			end)
+		end
+		
+		return module
+		
+	end
+	fake_module_scripts[script] = module_script
+end
+
+
+-- Scripts
+
+local function ZCYYI_fake_script() -- Tab1.LocalScript 
+	local script = Instance.new('LocalScript', Tab1)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local par = script.Parent
+	local player = game:GetService("Players").LocalPlayer
+	local char = player.Character or player.Character:Wait()
+	local backpack = player:WaitForChild("Backpack")
+	local function getMoveAmount()
+		local text = par.Scale.Text
+		local number = tonumber(text)
+		if number then
+			return number
+		else
+			return 1 
+		end
+	end
+	
+	local directionNames = {"Left", "Right", "Up", "Down", "Forward", "Back"}
+	
+	for _, name in ipairs(directionNames) do
+		local button = par:WaitForChild(name)
+		if button:IsA("TextButton") then
+			button.MouseButton1Click:Connect(function()
+				local tool = char:FindFirstChildOfClass("Tool")
+				if not tool then
+					return
+				end
+				local MOVE_AMOUNT = getMoveAmount() -- get current values
+				local directions = {
+					Left = CFrame.new(-MOVE_AMOUNT, 0, 0),
+					Right = CFrame.new(MOVE_AMOUNT, 0, 0),
+					Up = CFrame.new(0, MOVE_AMOUNT, 0),
+					Down = CFrame.new(0, -MOVE_AMOUNT, 0),
+					Forward = CFrame.new(0, 0, -MOVE_AMOUNT),
+					Back = CFrame.new(0, 0, MOVE_AMOUNT),
+				}
+				tool.Grip = tool.Grip * directions[name]
+				if tool then
+					tool.Parent = backpack
+					tool.Parent = char
+				end
+			end)
+		end
+	end
+	
+end
+coroutine.wrap(ZCYYI_fake_script)()
+local function PTXTL_fake_script() -- Drag.tab1 
+	local script = Instance.new('LocalScript', Drag)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	resizer = require(script.Parent.Parent.guiResizer.handler)
+	
+	frameToResize = script.Parent.Tab1
+	
+	-- very cool disabled text
+	
+	minimumSize = Vector2.new(240, 160)
+	
+	resizer.makeResizable(frameToResize, minimumSize)
+	resizer.makeDraggable(script.Parent)
+end
+coroutine.wrap(PTXTL_fake_script)()
+local function PPMSBUX_fake_script() -- Drag.Sum 
+	local script = Instance.new('LocalScript', Drag)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local RunService = game:GetService("RunService")
+	
+	RunService.Heartbeat:Connect(function()
+		local parent = script.Parent
+		local tab = parent.Tab1.Visible and parent.Tab1 or parent.Tab2
+	
+		parent.Size = UDim2.new(
+			tab.Size.X.Scale,
+			tab.Size.X.Offset,
+			parent.Size.Y.Scale,
+			parent.Size.Y.Offset
+		)
+	end)
+	
+end
+coroutine.wrap(PPMSBUX_fake_script)()
+local function MSTNN_fake_script() -- Drag.tab2 
+	local script = Instance.new('LocalScript', Drag)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	resizer = require(script.Parent.Parent.guiResizer.handler)
+	
+	frameToResize = script.Parent.Tab2
+	
+	-- very cool disabled text
+	
+	minimumSize = Vector2.new(240, 160)
+	
+	resizer.makeResizable(frameToResize, minimumSize)
+end
+coroutine.wrap(MSTNN_fake_script)()
+local function FVYAX_fake_script() -- Tab2.LocalScript 
+	local script = Instance.new('LocalScript', Tab2)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local par = script.Parent
+	local player = game:GetService("Players").LocalPlayer
+	local char = player.Character or player.Character:Wait()
+	local backpack = player:WaitForChild("Backpack")
+	-- Function to get rotation amount dynamically from TextBox
+	local function getRotationAmount()
+		local text = par.Scale.Text
+		local number = tonumber(text)
+		if number then
+			return number
+		else
+			return 45  -- default if invalid
+		end
+	end
+	
+	local directionNames = {"Left", "Right", "Up", "Down", "Forward", "Back"}
+	
+	for _, name in ipairs(directionNames) do
+		local button = par:WaitForChild(name)
+		if button:IsA("TextButton") then
+			button.MouseButton1Click:Connect(function()
+				-- Get tool when button is clicked
+				local tool = char:FindFirstChildOfClass("Tool")
+				if not tool then
+					return
+				end
+	
+				local ROTATION_AMOUNT = getRotationAmount() -- get current value
+				local directions = {
+					Left = CFrame.Angles(0, math.rad(-ROTATION_AMOUNT), 0),
+					Right = CFrame.Angles(0, math.rad(ROTATION_AMOUNT), 0),
+					Up = CFrame.Angles(math.rad(ROTATION_AMOUNT), 0, 0),
+					Down = CFrame.Angles(math.rad(-ROTATION_AMOUNT), 0, 0),
+					Forward = CFrame.Angles(0, 0, math.rad(-ROTATION_AMOUNT)),
+					Back = CFrame.Angles(0, 0, math.rad(ROTATION_AMOUNT)),
+				}
+	
+				tool.Grip = tool.Grip * directions[name]
+				if tool then
+					tool.Parent = backpack
+					tool.Parent = char
+				end
+			end)
+		end
+	end
+	
+end
+coroutine.wrap(FVYAX_fake_script)()
+local function PGHRNP_fake_script() -- Tab.LocalScript 
+	local script = Instance.new('LocalScript', Tab)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	script.Parent.MouseButton1Click:Connect(function()
+		local tab1 = script.Parent.Parent.Tab1
+		local tab2 = script.Parent.Parent.Tab2
+		tab1.Visible = not tab1.Visible
+		tab2.Visible = not tab1.Visible  -- hide Tab2 if Tab1 is visible
+	end)
+end
+coroutine.wrap(PGHRNP_fake_script)()
