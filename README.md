@@ -30,9 +30,6 @@ E To Extend
 Q To Retract
 
 
-T To Throw
-
-
 📥 **Loadstring**
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool-Mover/refs/heads/main/Telekinesis"))()
