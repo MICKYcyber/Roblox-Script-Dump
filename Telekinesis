@@ -1,157 +1,237 @@
-local Players=game:GetService("Players")
-local RunService=game:GetService("RunService")
-local UIS=game:GetService("UserInputService")
-local Workspace=game:GetService("Workspace")
-local LocalPlayer=Players.LocalPlayer
-local Camera=Workspace.CurrentCamera
-local tool=Instance.new("Tool")
-tool.RequiresHandle=false
-tool.Name="Telekinesis"
-tool.Parent=LocalPlayer.Backpack
-local parts={}
-local function forceOwnership(part)
-	pcall(function()
-		if part.SetNetworkOwner then
-			part:SetNetworkOwner(LocalPlayer)
-		end
-	end)
+-- stole from someone but made better
+local re = game:GetService("Workspace")
+local sandbox = function(var, func)
+    local env = getfenv(func)
+    local newenv = setmetatable({}, {
+        __index = function(self, k)
+            if k == "script" then
+                return var
+            else
+                return env[k]
+            end
+        end,
+    })
+    setfenv(func, newenv)
+    return func
 end
-local function getTarget()
-	local params=RaycastParams.new()
-	params.FilterDescendantsInstances={LocalPlayer.Character}
-	params.FilterType=Enum.RaycastFilterType.Blacklist
-	local result=Workspace:Raycast(Camera.CFrame.Position,Camera.CFrame.LookVector*500,params)
-	return result and result.Instance
+cors = {}
+
+local _Name = "telekinesis pm"
+local uis = game:GetService("UserInputService")
+local _Ins, _CF_new, _VTR_new = Instance.new, CFrame.new, Vector3.new
+mas = _Ins("Model", game:GetService("Lighting"))
+local con = getfenv().sethiddenproperty
+
+Tool0 = _Ins("Tool")
+Part1 = _Ins("Part")
+Script2 = _Ins("Script")
+
+local selectionbox = Instance.new("SelectionBox")
+selectionbox.LineThickness = 0.1
+selectionbox.Color3 = Color3.fromRGB(255, 255, 0)
+selectionbox.Adornee = nil
+
+frozen = {}
+
+LocalScript3 = _Ins("LocalScript")
+re = game:GetService("RunService")
+
+Tool0.Name = _Name
+Tool0.Parent = mas
+Tool0.Grip = _CF_new(0,0,1,1,0,0,0,1,0,0,0,1)
+Tool0.GripPos = _VTR_new(0,0,1)
+
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.Transparency = 1
+Part1.Size = _VTR_new(1,1,1)
+Part1.Locked = true
+
+local changed = "Changed"
+local cam = re.RenderStepped
+local w = wait
+
+local speed = 31
+
+Script2.Name = "LineConnect"
+Script2.Parent = Tool0
+Script2.Disabled = true
+
+LocalScript3.Name = "MainScript"
+LocalScript3.Parent = Tool0
+
+table.insert(cors, sandbox(LocalScript3, function()
+    w()
+    local tool = script.Parent
+    local object = nil
+    local mousedown = false
+
+    local BP = _Ins("BodyPosition")
+    BP.maxForce = _VTR_new(math.huge, math.huge, math.huge)
+    BP.P = BP.P * 3
+
+    local dist = nil
+    local scrollStep = 6
+
+    local Players = game:GetService("Players")
+    local LocalPlayer = Players.LocalPlayer
+    local Workspace = game:GetService("Workspace")
+
+    local handle = tool.Handle
+    local front = handle
+
+    local function getRootModel(inst)
+        if inst and inst.Parent and inst.Parent:IsA("Model") then
+            return inst.Parent
+        end
+        return nil
+    end
+
+    local function modelHasOnePart(model)
+        local count = 0
+        for _, v in ipairs(model:GetChildren()) do
+            if v:IsA("BasePart") then
+                count += 1
+                if count > 1 then
+                    return false
+                end
+            end
+        end
+        return count == 1
+    end
+
+    local function setModelAnchored(model, state)
+        for _, v in ipairs(model:GetDescendants()) do
+            if v:IsA("BasePart") then
+                v.Anchored = state
+            end
+        end
+    end
+
+    local function getHoveredFrozenObject(mouse)
+    local params = RaycastParams.new()
+    params.FilterDescendantsInstances = {LocalPlayer.Character}
+    params.FilterType = Enum.RaycastFilterType.Blacklist
+
+    local result = Workspace:Raycast(
+        mouse.Origin.Position,
+        mouse.UnitRay.Direction * 1000,
+        params
+    )
+    if not result then return nil end
+
+    local inst = result.Instance
+    local model = getRootModel(inst)
+
+    -- PRIORITY: frozen model
+    if model and frozen[model] then
+        return model
+    end
+
+    -- fallback: frozen part
+    if frozen[inst] then
+        return inst
+    end
+
+    return nil
 end
-local function initPart(part)
-	if not parts[part] then
-		parts[part]={grabbed=false,frozen=false,distance=5,grabMover=nil,frozenMover=nil}
-	end
+
+    local function onButton1Down(mouse)
+        if mousedown then return end
+        mousedown = true
+
+        while mousedown do
+            local params = RaycastParams.new()
+            params.FilterDescendantsInstances = {LocalPlayer.Character}
+            params.FilterType = Enum.RaycastFilterType.Blacklist
+
+            local result = Workspace:Raycast(
+                mouse.Origin.Position,
+                mouse.UnitRay.Direction * 1000,
+                params
+            )
+
+            if result and not result.Instance.Anchored then
+                object = result.Instance
+                selectionbox.Parent = Workspace
+                selectionbox.Adornee = object
+                dist = (object.Position - front.Position).Magnitude
+                break
+            end
+            w()
+        end
+
+        while mousedown and object and object.Parent do
+            local lv = _CF_new(front.Position, mouse.Hit.Position)
+            BP.Parent = object
+            BP.Position = front.Position + lv.LookVector * dist
+            w()
+        end
+
+        BP:Remove()
+        object = nil
+        selectionbox.Adornee = nil
+    end
+
+    local function onKeyDown(key, mouse)
+        key = key:lower()
+
+if key == "r" then
+    -- FIRST: check hovered frozen model (absolute priority)
+    local hovered = getHoveredFrozenObject(mouse)
+    if hovered and hovered:IsA("Model") then
+        frozen[hovered] = nil
+        setModelAnchored(hovered, false)
+        return
+    end
+
+    -- SECOND: held object logic
+    if object then
+        local model = getRootModel(object)
+        if model then
+            if frozen[model] then
+                frozen[model] = nil
+                setModelAnchored(model, false)
+            else
+                frozen[model] = true
+                setModelAnchored(model, true)
+                BP:Remove()
+            end
+        else
+            if frozen[object] then
+                frozen[object] = nil
+                object.Anchored = false
+            else
+                frozen[object] = true
+                object.Anchored = true
+                BP:Remove()
+            end
+        end
+    end
 end
-local function grabPart(part)
-	initPart(part)
-	local state=parts[part]
-	if state.frozen or state.grabbed then return end
-	forceOwnership(part)
-	local bv=Instance.new("BodyVelocity")
-	bv.MaxForce=Vector3.new(1e6,1e6,1e6)
-	bv.P=2000
-	bv.Velocity=Vector3.new()
-	bv.Parent=part
-	local bg=Instance.new("BodyGyro")
-	bg.MaxTorque=Vector3.new(1e6,1e6,1e6)
-	bg.P=3000
-	bg.D=500
-	bg.CFrame=part.CFrame
-	bg.Parent=part
-	state.grabbed=true
-	state.grabMover={bv=bv,bg=bg}
+        if key == "q" and dist and dist >= 5 then dist -= 5 end
+        if key == "e" and dist then dist += 5 end
+    end
+
+    tool.Equipped:Connect(function(mouse)
+        mouse.Button1Down:Connect(function() onButton1Down(mouse) end)
+        mouse.KeyDown:Connect(function(k) onKeyDown(k, mouse) end)
+        mouse.Button1Up:Connect(function() mousedown = false end)
+
+        mouse.WheelForward:Connect(function()
+            if dist then dist += scrollStep end
+        end)
+        mouse.WheelBackward:Connect(function()
+            if dist and dist > 5 then dist -= scrollStep end
+        end)
+    end)
+end))
+
+for _, v in pairs(mas:GetChildren()) do
+    v.Parent = game:GetService("Players").LocalPlayer.Backpack
 end
-local function releasePart(part,freeze)
-	local state=parts[part]
-	if not state or not state.grabbed then return end
-	if state.grabMover then
-		state.grabMover.bv:Destroy()
-		state.grabMover.bg:Destroy()
-		state.grabMover=nil
-	end
-	if freeze then
-		state.frozen=true
-		local bp=Instance.new("BodyPosition")
-		bp.MaxForce=Vector3.new(1e6,1e6,1e6)
-		bp.P=3000
-		bp.D=500
-		bp.Position=part.Position
-		bp.Parent=part
-		local bg=Instance.new("BodyGyro")
-		bg.MaxTorque=Vector3.new(1e6,1e6,1e6)
-		bg.P=3000
-		bg.D=500
-		bg.CFrame=part.CFrame
-		bg.Parent=part
-		state.frozenMover={bp=bp,bg=bg}
-	end
-	state.grabbed=false
+mas:Destroy()
+
+for _, v in pairs(cors) do
+    spawn(function() pcall(v) end)
 end
-local function toggleFreeze(part)
-	initPart(part)
-	local state=parts[part]
-	if state.frozen then
-		state.frozen=false
-		if state.frozenMover then
-			state.frozenMover.bp:Destroy()
-			state.frozenMover.bg:Destroy()
-			state.frozenMover=nil
-		end
-	else
-		state.frozen=true
-		if state.grabbed then
-			releasePart(part,false)
-		end
-		local bp=Instance.new("BodyPosition")
-		bp.MaxForce=Vector3.new(1e6,1e6,1e6)
-		bp.P=3000
-		bp.D=500
-		bp.Position=part.Position
-		bp.Parent=part
-		local bg=Instance.new("BodyGyro")
-		bg.MaxTorque=Vector3.new(1e6,1e6,1e6)
-		bg.P=3000
-		bg.D=500
-		bg.CFrame=part.CFrame
-		bg.Parent=part
-		state.frozenMover={bp=bp,bg=bg}
-	end
-end
-UIS.InputBegan:Connect(function(input,gp)
-	if gp then return end
-	if tool.Parent==LocalPlayer.Backpack then return end
-	local target=getTarget()
-	if input.UserInputType==Enum.UserInputType.MouseButton1 then
-		if target then grabPart(target) end
-	elseif input.KeyCode==Enum.KeyCode.R then
-		if target then toggleFreeze(target) end
-	elseif input.KeyCode==Enum.KeyCode.T then
-		if target and parts[target] and parts[target].grabbed then
-			target.AssemblyLinearVelocity=Camera.CFrame.LookVector*200
-			target.AssemblyAngularVelocity=Vector3.new()
-			releasePart(target,false)
-		end
-	elseif input.KeyCode==Enum.KeyCode.E then
-		for part,state in pairs(parts) do
-			if state.grabbed then state.distance=state.distance+1 end
-		end
-	elseif input.KeyCode==Enum.KeyCode.Q then
-		for part,state in pairs(parts) do
-			if state.grabbed then state.distance=math.max(2,state.distance-1) end
-		end
-	end
-end)
-UIS.InputEnded:Connect(function(input,gp)
-	if gp then return end
-	if tool.Parent==LocalPlayer.Backpack then return end
-	if input.UserInputType==Enum.UserInputType.MouseButton1 then
-		for part,state in pairs(parts) do
-			if state.grabbed then releasePart(part,false) end
-		end
-	end
-end)
-RunService.Heartbeat:Connect(function()
-	for part,state in pairs(parts) do
-		if state.frozen and state.frozenMover then
-			state.frozenMover.bp.Position=part.Position
-			state.frozenMover.bg.CFrame=part.CFrame
-		elseif state.grabbed and state.grabMover then
-			forceOwnership(part)
-			local targetPos=Camera.CFrame.Position+Camera.CFrame.LookVector*state.distance
-			local dir=targetPos-part.Position
-			state.grabMover.bv.Velocity=dir*10
-			state.grabMover.bg.CFrame=CFrame.new(part.Position,targetPos)
-		end
-	end
-end)
-tool.Unequipped:Connect(function()
-	for part,state in pairs(parts) do
-		if state.grabbed then releasePart(part,false) end
-	end
-end)
