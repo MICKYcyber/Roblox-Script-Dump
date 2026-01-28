@@ -1,4 +1,4 @@
-Please give me credit if you decide to upload this to scriptblox or anything else
+Please give me credit if you decide to upload this to scriptblox or anything else -- fuck that idgaf just upload it just spread the tools
 
 # Super-Tool-Mover
 
@@ -17,12 +17,13 @@ Key = "F"
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool-Mover/refs/heads/main/Toggle%20Anims"))()
 ```
 # Shitty Script 
-<sub>i wanna remove this but its one of me and my friends first script hes still ass at coding i have been coding for like 3.5 years so as he but he cant even use chatgpt without help<sub>
+<sub>i wanna remove this but its one of me and my friends first script hes still ass at coding i have been coding for like 3.5 years so as he but he cant even use chatgpt without help-- ill just make it small<sub>
 
-📥 **Loadstring**
+<sub>📥 **Loadstring**
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool-Mover/refs/heads/main/Shittyscript.lua"))()
 ```
+<sub>
 # Basic Telekinesis Open Source
 R To Freeze
 
