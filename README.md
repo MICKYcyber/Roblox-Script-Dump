@@ -17,7 +17,7 @@ Key = "F"
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool-Mover/refs/heads/main/Toggle%20Anims"))()
 ```
 # Shitty Script 
-## i wanna remove this but its one of me and my friends first script hes still ass at coding i have been coding for like 3.5 years so as he but he cant even use chatgpt without help
+<sub>i wanna remove this but its one of me and my friends first script hes still ass at coding i have been coding for like 3.5 years so as he but he cant even use chatgpt without help<sub>
 
 📥 **Loadstring**
 ```lua
