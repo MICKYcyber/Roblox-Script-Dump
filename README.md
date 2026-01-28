@@ -36,3 +36,10 @@ Q To Retract
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool-Mover/refs/heads/main/Telekinesis"))()
 ```
+
+# Collect A Keycap Script OMFG Bracket ui is PEAK
+
+some random emoji **Loadstring**
+```lua
+https://raw.githubusercontent.com/MICKYcyber/Roblox-Script-Dump/refs/heads/main/collect%20a%20keycap
+```
