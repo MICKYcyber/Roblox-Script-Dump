@@ -41,5 +41,5 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Super-Tool
 
 some random emoji **Loadstring**
 ```lua
-https://raw.githubusercontent.com/MICKYcyber/Roblox-Script-Dump/refs/heads/main/collect%20a%20keycap
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Roblox-Script-Dump/refs/heads/main/collect%20a%20keycap"))() -- did i fuck it up this time??
 ```
