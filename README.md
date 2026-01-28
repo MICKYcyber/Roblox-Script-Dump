@@ -42,3 +42,10 @@ some random emoji **Loadstring**
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Roblox-Script-Dump/refs/heads/main/collect%20a%20keycap"))() -- did i fuck it up this time??
 ```
+
+# Insult Gui
+
+**Loadstring**
+```lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MICKYcyber/Roblox-Script-Dump/refs/heads/main/insult%20gui.lua"))()
+```
