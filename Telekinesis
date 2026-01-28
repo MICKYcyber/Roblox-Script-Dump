@@ -1,4 +1,5 @@
 -- stole from someone but made better
+--owo woosh mind shit 
 local re = game:GetService("Workspace")
 local sandbox = function(var, func)
     local env = getfenv(func)
